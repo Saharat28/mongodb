@@ -15,11 +15,12 @@ app.get("/", (req, res)=>{
     res.send("Sawasdee");
   });
   
-  const userRoute = require("./routes/user.route");
-  const postRoute = require("./routes/post.route");
-  app.use("/posts", postRoute);
-  app.use("/users", userRoute);
-
+  // const userRoute = require("./routes/user.route");
+  // const postRoute = require("./routes/post.route");
+  // app.use("/posts", postRoute);
+  // app.use("/users", userRoute);
+  const cameraRoute = require("./routes/camera.route");
+  app.use("/cameras", cameraRoute);
 
   app.listen(port, () => {
     console.log("App started at port: " + port);
