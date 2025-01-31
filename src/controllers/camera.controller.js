@@ -4,7 +4,7 @@ const prisma = new PrismaClient();
 // Create a new camera
 exports.cameraPost = async (req, res) => {
   const { ip_address, name, location } = req.body;
-  const result = await prisma.cameras.create({
+  const result = await prisma.camera.create({
     data: { ip_address, name, location },
   });
   res.json(result);
@@ -12,7 +12,7 @@ exports.cameraPost = async (req, res) => {
 
 // Get all cameras
 exports.getPosts = async (req, res) => {
-  const cameras = await prisma.cameras.findMany();
+  const cameras = await prisma.camera.findMany();
   res.json(cameras);
 };
 
